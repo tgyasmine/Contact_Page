@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Intelligent - Votre Agence Digitale</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+    direction:rtl;
+    text-align:right;
+}
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:40px 20px;
+}
+h1{
+    text-align:center;
+    margin-bottom:10px;
+}
+p{
+    text-align:center;
+    color:#cbd5e1;
+}
+form{
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+input, select, textarea{
+    padding:12px;
+    border-radius:6px;
+    border:none;
+    font-size:16px;
+    width:100%;
+}
+button{
+    padding:14px;
+    border:none;
+    background:#22c55e;
+    color:white;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+button:hover{
+    background:#16a34a;
+}
+label{
+    font-weight:bold;
+    margin-bottom:5px;
+    display:block;
+}
+.checkbox-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+.checkbox-group label{
+    font-weight:normal;
+}
+footer{
+    margin-top:40px;
+    text-align:center;
+    font-size:14px;
+    color:#94a3b8;
+}
+.language-select{
+    margin-bottom:20px;
+    text-align:center;
+}
+.hidden{
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="language-select">
+<label for="lang">اختر اللغة / Choisissez la langue / Choose Language:</label>
+<select id="lang" onchange="switchLanguage()">
+    <option value="ar">العربية</option>
+    <option value="fr">Français</option>
+    <option value="en">English</option>
+</select>
+</div>
+
+<form action="https://formsubmit.co/youremail@gmail.com" method="POST">
+
+<h1 class="lang" data-ar="فلنتحدث عن البزنس الخاص بك" data-fr="Parlons de votre projet" data-en="Let's talk about your business"></h1>
+<p class="lang" data-ar="املأ النموذج أدناه وسنتواصل معك خلال 24 ساعة." data-fr="Remplissez le formulaire et nous vous contacterons sous 24h." data-en="Fill out the form and we will contact you within 24h."></p>
+
+<label class="lang" data-ar="مرحبا، اسمي:" data-fr="Bonjour, je m'appelle :" data-en="Hello, my name is:"></label>
+<input type="text" name="Nom" placeholder="الاسم الكامل / Nom complet / Full Name" required>
+
+<label class="lang" data-ar="هذا هو بريدي الإلكتروني:" data-fr="Voici mon e-mail :" data-en="My email is:"></label>
+<input type="email" name="Email" placeholder="البريد الإلكتروني / E-mail / Email" required>
+
+<label class="lang" data-ar="يمكنكم التواصل معي عبر:" data-fr="Vous pouvez me contacter via :" data-en="You can reach me via:"></label>
+<input type="tel" name="Tel" placeholder="رقم الهاتف / Téléphone / Phone" required>
+
+<label class="lang" data-ar="نوع النشاط:" data-fr="Type d'activité :" data-en="Business type:"></label>
+<select name="TypeActivite" required>
+    <option value="">--</option>
+    <option class="lang" data-ar="تجارة إلكترونية" data-fr="E-commerce" data-en="E-commerce">E-commerce</option>
+    <option class="lang" data-ar="خدمات رقمية" data-fr="Services numériques" data-en="Digital Services">Digital Services</option>
+    <option class="lang" data-ar="إنتاج محتوى" data-fr="Création de contenu" data-en="Content Creation">Content Creation</option>
+    <option class="lang" data-ar="خدمات التسويق" data-fr="Marketing Services" data-en="Marketing Services">Marketing Services</option>
+    <option class="lang" data-ar="منتجات محلية" data-fr="Produits locaux" data-en="Local Products">Local Products</option>
+    <option class="lang" data-ar="آخر" data-fr="Autre" data-en="Other">Other</option>
+</select>
+
+<label class="lang" data-ar="يمكنكم العثور على نشاطي هنا:" data-fr="Vous pouvez trouver mon activité ici :" data-en="You can find my business here:"></label>
+<input type="url" name="Lien" placeholder="موقعك الإلكتروني / Votre site / Your website">
+
+<label class="lang" data-ar="هدفي الإعلاني الرئيسي هو:" data-fr="Mon objectif principal est :" data-en="My main advertising goal is:"></label>
+<select name="Objectif" required>
+    <option value="">--</option>
+    <option class="lang" data-ar="تحقيق المبيعات" data-fr="Générer des ventes" data-en="Generate sales">Generate sales</option>
+    <option class="lang" data-ar="زيادة الوعي بالعلامة التجارية" data-fr="Augmenter la notoriété de la marque" data-en="Increase brand awareness">Increase brand awareness</option>
+    <option class="lang" data-ar="زيادة المتابعين" data-fr="Augmenter les abonnés" data-en="Increase followers">Increase followers</option>
+    <option class="lang" data-ar="جمع العملاء المتوقعين" data-fr="Collecter des leads" data-en="Collect leads">Collect leads</option>
+</select>
+
+<label class="lang" data-ar="أخطط للاستثمار شهريا في الإعلانات المدفوعة:" data-fr="Je prévois d'investir chaque mois :" data-en="I plan to invest monthly in paid ads:"></label>
+<select name="Budget" id="Budget" required>
+    <option value="">--</option>
+    <option value="100000-200000">100.000 دج - 200.000 دج</option>
+    <option value="200000-500000">200.000 دج - 500.000 دج</option>
+    <option value="500000+">500.000 دج +</option>
+</select>
+
+<label class="lang" data-ar="هل أقوم حاليا بتشغيل إعلانات مدفوعة؟" data-fr="Est-ce que je fais actuellement de la publicité payante ?" data-en="Am I currently running paid ads?"></label>
+<select name="CampagneActuelle" id="CampagneActuelle" required onchange="toggleAccountHelp()">
+    <option value="">--</option>
+    <option value="Oui" class="lang" data-ar="نعم" data-fr="Oui" data-en="Yes">Yes</option>
+    <option value="Non" class="lang" data-ar="لا" data-fr="Non" data-en="No">No</option>
+</select>
+
+<label class="lang" data-ar="ما الذي يواجهك حاليا في أداء إعلاناتك؟" data-fr="Quel problème rencontrez-vous actuellement ?" data-en="What issue are you currently facing?"></label>
+<textarea name="ProblemeAds" rows="5" placeholder="اشرح المشكلة / Expliquez le problème / Explain the issue"></textarea>
+
+<!-- الحسابات الإعلانية -->
+<h2 class="lang" data-ar="معلومات حساباتك الإعلانية" data-fr="Informations sur vos comptes publicitaires" data-en="Your advertising accounts info"></h2>
+<p class="lang" data-ar="اختر ما لديك بالفعل:" data-fr="Cochez ce que vous possédez déjà :" data-en="Check what you already have:"></p>
+<div class="checkbox-group">
+    <label><input type="checkbox" name="Atouts[]" value="Compte Publicitaire" onchange="toggleAccountHelp()"> Ad account</label>
+    <label><input type="checkbox" name="Atouts[]" value="Carte Visa/Gold" onchange="toggleAccountHelp()"> Visa/Gold card</label>
+    <label><input type="checkbox" name="Atouts[]" value="Portfolio Manager Meta Business" onchange="toggleAccountHelp()"> Portfolio Manager Meta Business</label>
+</div>
+
+<label id="BesoinCompteLabel" class="lang hidden" data-ar="إذا لم يكن لديك، هل تريد أن نساعدك في إنشاء الحسابات؟" data-fr="Si vous ne les avez pas, souhaitez-vous que nous les créions ?" data-en="If you don't have them, do you want us to create them?"></label>
+<select name="BesoinCompte" id="BesoinCompte" class="hidden">
+    <option value="">--</option>
+    <option value="Oui" class="lang" data-ar="نعم، أريد المساعدة" data-fr="Oui, je veux de l'aide" data-en="Yes, I want help">Yes</option>
+    <option value="Non" class="lang" data-ar="لا، سأقوم بذلك بنفسي" data-fr="Non, je le ferai moi-même" data-en="No, I will do it myself">No, I will do it myself</option>
+</select>
+
+<label class="lang" data-ar="هل تحتاج لمساعدة في تصميم الإعلان أو المحتوى؟" data-fr="Avez-vous besoin d'aide pour créer votre publicité ou contenu ?" data-en="Do you need help with ad or content creation?"></label>
+<select name="AideCreation">
+    <option value="">--</option>
+    <option value="Oui" class="lang" data-ar="نعم" data-fr="Oui" data-en="Yes">Yes</option>
+    <option value="Non" class="lang" data-ar="لا" data-fr="Non" data-en="No">No</option>
+</select>
+
+<label class="lang" data-ar="هل ترغب في جدولة مكالمة استشارية؟" data-fr="Voulez-vous programmer un appel de consultation ?" data-en="Do you want to schedule a consultation call?"></label>
+<input type="datetime-local" name="RendezVous">
+
+<button type="submit" class="lang" data-ar="إرسال" data-fr="Envoyer" data-en="Submit">Submit</button>
+</form>
+
+<footer>
+© 2026 وكالتك الرقمية / Votre Agence Digitale / Your Digital Agency
+</footer>
+
+</div>
+
+<script>
+// تبديل اللغة
+function switchLanguage() {
+    const lang = document.getElementById('lang').value;
+    document.querySelectorAll('.lang').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+    });
+    document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
+    document.body.style.textAlign = (lang === 'ar') ? 'right' : 'left';
+}
+
+// إظهار سؤال إنشاء الحسابات فقط إذا لم يكن لدى العميل أي حساب
+function toggleAccountHelp() {
+    const checkboxes = document.querySelectorAll('input[name="Atouts[]"]');
+    const hasAccount = Array.from(checkboxes).some(cb => cb.checked);
+    const label = document.getElementById('BesoinCompteLabel');
+    const select = document.getElementById('BesoinCompte');
+    if(!hasAccount){
+        label.classList.remove('hidden');
+        select.classList.remove('hidden');
+    } else {
+        label.classList.add('hidden');
+        select.classList.add('hidden');
+    }
+}
+
+window.onload = () => {
+    switchLanguage();
+    toggleAccountHelp();
+};
+</script>
+
+</body>
+</html>
